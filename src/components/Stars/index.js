@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import './index.css';
 
 function Stars({ count }) {
-    const star = [];
-
-    for (let i = 1; i <= count; i++) {
-        star.push(
-            <li key={i}>
+    const star = Array(count)
+        .fill()
+        .map((_, idx) => (
+            <li key={idx}>
                 <Star />
             </li>
-        );
-    }
+        ));
 
     return (
         count >= 1 &&
